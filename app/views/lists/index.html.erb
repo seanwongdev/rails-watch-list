@@ -1,0 +1,30 @@
+<div class="navbar d-flex justify-content-between">
+  <i class="fa-solid fa-film mx-4" style="color: #72bbdf;"></i>
+    <div class="d-flex mx-4">
+      <%= link_to 'My Lists', lists_path, class:'d-flex align-items-center text-decoration-none mx-3 text-black navbar-link' %>
+      <%= link_to 'New list', new_list_path, class:'d-flex align-items-center text-decoration-none text-black navbar-link' %>
+    </div>
+  </div>
+
+<div class="banner"><h1>Save any kind of movies</h1></div>
+
+<div class="container my-5">
+  <div class="d-flex justify-content-between mb-3">
+    <h2>My Lists</h2>
+    <%= link_to 'Create a new movie list', new_list_path, class:'btn btn-success text-white d-flex align-items-center' %>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <% @lists.each do |list| %>
+      <div class="col">
+        <div class="card h-100">
+          <a href="<%= list_path(list) %>">
+            <div class="d-flex justify-content-center align-items-center" style="background-image: url('<%= list.image_url %>'); height: 200px; width: 100%; background-size: cover; background-position: center; filter: grayscale(70%);">
+              <h2 class="card-header text-white"><%= list.name%></h2>
+            </div>
+          </a>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

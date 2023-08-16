@@ -1,1 +1,10 @@
 // Specific CSS for your home-page
+a {
+  text-decoration: none;
+}
+
+.navbar-link {
+  &:hover {
+    text-decoration: underline !important ;
+  }
+}
