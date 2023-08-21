@@ -19,9 +19,11 @@
       <div class="col">
         <div class="card h-100">
           <a href="<%= list_path(list) %>">
-            <div class="d-flex justify-content-center align-items-center" style="background-image: url('<%= list.image_url %>'); height: 200px; width: 100%; background-size: cover; background-position: center; filter: grayscale(70%);">
-              <h2 class="card-header text-white"><%= list.name%></h2>
-            </div>
+            <% if list.photo.attached? %>
+              <div class="d-flex justify-content-center align-items-center" style="background-image: url('<%= cl_image_path list.photo.key %>'); height: 200px; width: 100%; background-size: cover; background-position: center; filter: grayscale(70%);">
+                <h2 class="card-header text-white"><%= list.name%></h2>
+              </div>
+            <% end %>
           </a>
         </div>
       </div>

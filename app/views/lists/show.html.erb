@@ -6,7 +6,7 @@
     </div>
   </div>
 
-  <div class="banner d-flex align-items-center justify-content-center position-relative" style="background-image: url('<%= @list.image_url %>'); height: 300px; background-position: center; background-size: cover;">
+  <div class="banner d-flex align-items-center justify-content-center position-relative" style="background-image: url('<%= cl_image_path @list.photo.key %>'); height: 300px; background-position: center; background-size: cover;">
     <h1 class="text-white"><%= @list.name %></h1>
     <button class="btn btn-light bookmark-count position-absolute top-0 end-0"><%= @list.bookmarks.length %> movies</button>
   </div>
@@ -42,8 +42,6 @@
     <%= f.association :movie %>
     <%= f.submit %>
   <% end %>
-
-  <select name="" id="" data-controller="tom-select"></select>
 
   <hr>
   <%= link_to 'Back to homepage', lists_path %>
